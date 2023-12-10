@@ -35,6 +35,7 @@ public class CharacterMovement : MonoBehaviour
         {
             velocity.y = -2f;
         }
+        Debug.Log("merhaba");
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
