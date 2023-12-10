@@ -16,7 +16,7 @@ public class MouseLook : MonoBehaviour
         //Editorden atama yapılmamışsa kod düzeltme yapsın
         if (playerBody == null)
         {
-            Debug.Log("<color=red>Character objesinin kamerasında, Inspector'de scripte character ataması yapılmamış</color>\nkod ile düzeltildi");
+            //Debug.Log("<color=red>Character objesinin kamerasında, Inspector'de scripte character ataması yapılmamış</color>\nkod ile düzeltildi");
             playerBody = transform.parent.transform;
         }
     }
