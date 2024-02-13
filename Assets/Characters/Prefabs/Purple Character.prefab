@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4152976039033209811}
   - component: {fileID: 822411232069203863}
   - component: {fileID: 3018077568295175546}
+  - component: {fileID: 8425275619528596678}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 518174121512095086}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.010000229, y: 0.58599997, z: 0.42000008}
+  m_LocalPosition: {x: 0.86, y: 0.6, z: -1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,13 +101,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518174121512095086}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeed7875a93a5154ca7f9e6dd06fa122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: 100
   playerBody: {fileID: 0}
+--- !u!114 &8425275619528596678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518174121512095086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23543c2c3d2ccae45b5453167aa11d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1223157011231535737}
+  mouseSense: 1
+  lookUp: -15
+  lookDown: 20
 --- !u!1 &1223157011231535737
 GameObject:
   m_ObjectHideFlags: 0
