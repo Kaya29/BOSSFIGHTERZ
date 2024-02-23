@@ -16,6 +16,9 @@ TagManager:
   - Wood (Static)
   - Dirt (Static)
   - Wood
+  - Bullet
+  - Enemy
+  - Character
   layers:
   - Default
   - TransparentFX
@@ -24,7 +27,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Minimap
   - Wall
   - First Person View
   - Character
