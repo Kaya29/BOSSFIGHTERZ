@@ -38,60 +38,60 @@ public class TwoDmansionalAnimationStateController : MonoBehaviour
     void changeVelocity(bool ForwardPressed, bool LeftPressed,bool BackWardPressed, bool RightPressed, float currentMaxVelocity)
     {
 
-     
-
-        if (ForwardPressed && velocityZ < currentMaxVelocity && !GunisActive) // silah yoksa
-        {
-            velocityZ += Time.deltaTime * acceleration;
-        }
-        if (ForwardPressed && velocityZ < currentMaxVelocity && GunisActive) // silah varsa
-        {
-            velocityZ += Time.deltaTime * acceleration;
-        }
-        //if (BackWardPressed && (velocityZ > -0.5f && velocityZ <= 0.0f))
-        //{
-        //    velocityZ += Time.deltaTime * acceleration;
-        //}
+            if (ForwardPressed && velocityZ < currentMaxVelocity && !GunisActive) // silah yoksa
+            {
+                velocityZ += Time.deltaTime * acceleration;
+            }
+            if (ForwardPressed && velocityZ < currentMaxVelocity && GunisActive) // silah varsa
+            {
+                velocityZ += Time.deltaTime * acceleration;
+            }
+            //if (BackWardPressed && (velocityZ > -0.5f && velocityZ <= 0.0f))
+            //{
+            //    velocityZ += Time.deltaTime * acceleration;
+            //}
 
 
-        if (LeftPressed && velocityX > -currentMaxVelocity && !GunisActive)
-        {
-            velocityX -= Time.deltaTime * acceleration;
-        }
-        if (LeftPressed && velocityX > -currentMaxVelocity && GunisActive)
-        {
-            velocityX -= Time.deltaTime * acceleration;
-        }
+            if (LeftPressed && velocityX > -currentMaxVelocity && !GunisActive)
+            {
+                velocityX -= Time.deltaTime * acceleration;
+            }
+            if (LeftPressed && velocityX > -currentMaxVelocity && GunisActive)
+            {
+                velocityX -= Time.deltaTime * acceleration;
+            }
 
-        if (RightPressed && velocityX < currentMaxVelocity && !GunisActive)
-        {
-            velocityX += Time.deltaTime * acceleration;
-        }
-        if (RightPressed && velocityX < currentMaxVelocity && GunisActive)
-        {
-            velocityX += Time.deltaTime * acceleration;
-        }
+            if (RightPressed && velocityX < currentMaxVelocity && !GunisActive)
+            {
+                velocityX += Time.deltaTime * acceleration;
+            }
+            if (RightPressed && velocityX < currentMaxVelocity && GunisActive)
+            {
+                velocityX += Time.deltaTime * acceleration;
+            }
 
-        //hýzý azaltma iþlemleri
+            //hýzý azaltma iþlemleri
 
-        if (!ForwardPressed && velocityZ > 0.0f)
-        {
-            velocityZ -= Time.deltaTime * deceleration;
-        }
+            if (!ForwardPressed && velocityZ > 0.0f)
+            {
+                velocityZ -= Time.deltaTime * deceleration;
+            }
 
-        // eðer sol tuþa yani A ya basýlmazsa hýzýný (-) den 0 a doðru arttýrýr ve (-) deðeri 0 a çeker
+            // eðer sol tuþa yani A ya basýlmazsa hýzýný (-) den 0 a doðru arttýrýr ve (-) deðeri 0 a çeker
 
-        if (!LeftPressed && velocityX < 0.0f)
-        {
-            velocityX += Time.deltaTime * deceleration;
-        }
+            if (!LeftPressed && velocityX < 0.0f)
+            {
+                velocityX += Time.deltaTime * deceleration;
+            }
 
-        // eðer sað tuþa yani D ye basýlmazsa hýzýný azaltýr ve (+) deðeri 0 a çeker
+            // eðer sað tuþa yani D ye basýlmazsa hýzýný azaltýr ve (+) deðeri 0 a çeker
 
-        if (!RightPressed && velocityX > 0.0f)
-        {
-            velocityX -= Time.deltaTime * deceleration;
-        }
+            if (!RightPressed && velocityX > 0.0f)
+            {
+                velocityX -= Time.deltaTime * deceleration;
+            }
+      
+
     }
 
     void lockOrResetVelocity(bool ForwardPressed, bool LeftPressed, bool RightPressed, bool RunPressed, float currentMaxVelocity)
@@ -176,6 +176,7 @@ public class TwoDmansionalAnimationStateController : MonoBehaviour
     void Update()
     {       
 
+
         // klavyedeki tuþ girdilerini almak
         bool ForwardPressed = Input.GetKey(KeyCode.W);
         bool BackWardPressed = Input.GetKey(KeyCode.S);
@@ -201,9 +202,10 @@ public class TwoDmansionalAnimationStateController : MonoBehaviour
 
         float currentMaxVelocity = RunPressed ? maxRunVelocity : maxWalkVelocity; //eðer shifte basýðp tutarsa true olarak döner ve anlýk velocityi 1. olan a
 
-
-        changeVelocity(ForwardPressed,LeftPressed, BackWardPressed, RightPressed, currentMaxVelocity);
-        lockOrResetVelocity(ForwardPressed, LeftPressed, RightPressed, RunPressed, currentMaxVelocity);
+          changeVelocity(ForwardPressed, LeftPressed, BackWardPressed, RightPressed, currentMaxVelocity);
+          lockOrResetVelocity(ForwardPressed, LeftPressed, RightPressed, RunPressed, currentMaxVelocity);
+        
+       
 
         if (GunisActive) //true ise girecek
         {
